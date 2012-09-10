@@ -33,13 +33,13 @@ import com.netflix.astyanax.util.RangeBuilder;
 
 /**
  * Class to count number of rows in a Cassandra column family.
- * 
+ *
  * @author Kishore Kopalle (kkopalle@gmail.com)
  */
 public class AstyanaxCountRows {
 
     private static String SEEDS = "192.168.1.159:9160";
-    
+
 	private final static String CLUSTER_NAME = "StressCluster";
 	private final static String KEYSPACE_NAME = "StressKeyspace";
 	private final static String COLUMN_FAMILY = "StressStandard";
@@ -50,11 +50,8 @@ public class AstyanaxCountRows {
 	    public static ColumnFamily<String, String> CF_STANDARD = ColumnFamily
 	            .newColumnFamily(COLUMN_FAMILY, StringSerializer.get(),
 	                    StringSerializer.get());
-	/**
-	 * @param args
-	 */
-	//usage: CountRows <clusterName> <keyspaceName> columnFamilyName>
-	public static void main(String[] args) 
+
+	public static void main(String[] args)
 	{
 
 		double nanoStart = System.nanoTime();
@@ -99,13 +96,13 @@ public class AstyanaxCountRows {
         	System.out.println("Total row count is " + counter);
         	double timeTaken = (System.nanoTime()-nanoStart)/(1e9);
         	System.out.println("Time taken to fetch " + counter + " rows is " + "" + timeTaken + " seconds.");
-        	
+
 
 	        	} catch (ConnectionException e) {
 	        		e.printStackTrace();
 	    }
-	    
-	    
+
+
 	}
 
 }
