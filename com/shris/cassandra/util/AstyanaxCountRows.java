@@ -91,18 +91,12 @@ public class AstyanaxCountRows {
 	        double counter = 0D;
 	        for (Row<String, String> row : rows.getResult()) {
 	        	counter++;
-//	            System.out.println("ROW: " + row.getKey() + " " + row.getColumns().size());
 	        }
-        	System.out.println("Total row count is " + counter);
         	double timeTaken = (System.nanoTime()-nanoStart)/(1e9);
         	System.out.println("Time taken to fetch " + counter + " rows is " + "" + timeTaken + " seconds.");
-
-
-	        	} catch (ConnectionException e) {
+		} 
+		catch (ConnectionException e) {
 	        		e.printStackTrace();
-	    }
-
-
+		}
 	}
-
 }
