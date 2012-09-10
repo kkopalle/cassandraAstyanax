@@ -16,7 +16,11 @@ import com.netflix.astyanax.serializers.StringSerializer;
 import com.netflix.astyanax.thrift.ThriftFamilyFactory;
 import com.netflix.astyanax.util.RangeBuilder;
 
-
+/**
+ * Class to count number of rows in a Cassandra column family.
+ * 
+ * @author Kishore Kopalle (kkopalle@gmail.com)
+ */
 public class AstyanaxCountRows {
 
     private static String SEEDS = "192.168.1.159:9160";
